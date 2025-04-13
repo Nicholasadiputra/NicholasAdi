@@ -1,0 +1,3 @@
+Here are the contents for the file: /multimedia-website/multimedia-website/media/text/sample.txt
+
+This file is intentionally left blank.
