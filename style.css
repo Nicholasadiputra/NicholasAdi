@@ -106,8 +106,22 @@ h2 {
     margin-top: 10px;
     color: #666;
     text-align: center;
-<<<<<<< HEAD
 }
-=======
+
+.video-container {
+    background: #f5f5f5;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-align: center;
 }
->>>>>>> 406dbbb43d98f286439b9835a768fcac7bd26585
+
+.video-container video {
+    max-width: 100%;
+    margin: 15px 0;
+}
+
+.video-info {
+    color: #666;
+    margin-top: 10px;
+}
