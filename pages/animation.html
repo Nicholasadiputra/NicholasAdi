@@ -29,11 +29,43 @@
             border-radius: 8px;
         }
 
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
         .animation-info {
             margin-top: 15px;
             color: #666;
             font-size: 0.9em;
             line-height: 1.4;
+        }
+
+        .speed-controls {
+            position: relative;
+            z-index: 10;
+            margin-top: -40px;
+            padding: 10px;
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .speed-controls button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .speed-controls button:hover {
+            background: #555;
         }
     </style>
 </head>
@@ -135,6 +167,43 @@
             </div>
             <p class="animation-info">Animasi komputer yang dibuat semirip mungkin dengan dunia nyata. Contoh: Avatar.</p>
         </div>
+
+        <!-- Replace the video-container div with animation-container -->
+        <div class="animation-container">
+            <h3>Animasi Buatan</h3>
+            <div class="video-wrapper">
+                <video id="myVideo" autoplay loop muted playsinline controls>
+                    <source src="../media/video/animasi_pertama_nicholas.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung format video ini.
+                </video>
+                <div class="speed-controls">
+                    <button onclick="changeSpeed(0.5)">0.5x</button>
+                    <button onclick="changeSpeed(1)">1x</button>
+                    <button onclick="changeSpeed(1.5)">1.5x</button>
+                    <button onclick="changeSpeed(2)">2x</button>
+                </div>
+            </div>
+            <p class="animation-info">Format: MP4 (.mp4)<br>✓ Animasi 2D sederhana<br>✓ Dibuat menggunakan Pivot Animator</p>
+        </div>
     </main>
+
+    <script>
+        // Make sure DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Test if video exists
+            const video = document.getElementById('myVideo');
+            if (video) {
+                console.log('Video element found');
+            }
+        });
+
+        function changeSpeed(rate) {
+            const video = document.getElementById('myVideo');
+            if (video) {
+                video.playbackRate = rate;
+                console.log('Speed changed to: ' + rate);
+            }
+        }
+    </script>
 </body>
 </html>
